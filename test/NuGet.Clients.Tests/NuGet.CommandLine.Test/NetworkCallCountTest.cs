@@ -1197,7 +1197,13 @@ namespace NuGet.CommandLine.Test
                     slnPath,
                     "-Verbosity",
                     "detailed",
-                    "-DisableParallelProcessing"
+                    "-DisableParallelProcessing",
+                    "MSBuildVersion",
+#if VS14                    
+                    "14"
+#elif VS15
+                    "15"
+#endif
                 };
 
                 // Act
